@@ -12,6 +12,7 @@ This project automates the process of creating a new project by doing the follow
 ## Table of Contents
 
 - [Install](#install)
+- [Setup](#setup)
 - [Usage](#usage)
 
 
@@ -24,6 +25,11 @@ The "requests" package is needed:
 $ pip install requests
 ```
 
+
+
+## Setup
+
+You have to add "config.json" which contains your access token from GitHub. An example is given in "config_example.json".
 
 
 ## Usage
