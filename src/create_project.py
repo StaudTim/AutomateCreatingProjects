@@ -1,30 +1,30 @@
+import json
 import sys
 import requests
 
 
-class CreateRepository:
-    def __init__(self, name):
-        self._name = name
-        self._make_repository()
+def create(name):
+    with open("config.json") as config:
+        data = json.load(config)
 
-    def _make_repository(self):
-        url = 'https://api.github.com/user/repos'
-        headers = {"authorization": "password"}
-        body = {
-            "name": self._name,
-            "private": 'true',
-        }
+    url = 'https://api.github.com/user/repos'
+    headers = {"authorization": data['headers']['password']}
+    body = {
+        "name": name,
+        "private": data['body']['private'],
+    }
 
-        resp = requests.post(headers=headers, url=url, json=body)
-        answer = resp.json()
-        try:
-            print(f'created repository: {answer["name"]}')
-        except:
-            print(answer['message'])
+    resp = requests.post(headers=headers, url=url, json=body)
+    answer = resp.json()
+    try:
+        print(f'created repository: {answer["name"]}')
+
+    except:
+        print(answer['message'])
 
 
 def main():
-    repository = CreateRepository(sys.argv[1])
+    create(sys.argv[1])
 
 
 if __name__ == "__main__":

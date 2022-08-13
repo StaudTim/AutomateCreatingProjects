@@ -1,0 +1,8 @@
+{
+  "headers": {
+    "password": "mySecretPassword"
+  },
+  "body": {
+    "private": "true"
+  }
+}
