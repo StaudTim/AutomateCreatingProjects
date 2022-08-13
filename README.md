@@ -1,24 +1,38 @@
 # Automate the process of creating a new project
 
-###This project should automate the process of creating a new project by doing the following steps:
+This project automates the process of creating a new project by doing the following steps:
 
-####Step 1:
-Navigate into the directory for repositories 
+1. Navigate into directory where you store your projects
+2. Create a new repository on GitHub
+3. Clone the repository into your directory
+4. Create and open README and main file
 
-####Step 2: 
-Create a new repository on GitHub
 
-####Step 3: 
-Clone the repository into the directory
 
-####Step 4: 
-Navigate into the repository and create 'src' folder
+## Table of Contents
 
-####Step 5: 
-Open 'README.md', so you can edit it
+- [Install](#install)
+- [Usage](#usage)
 
-####Step 6: 
-Navigate into 'src' folder and create .py/.r file
 
-####Step 7: 
-Open the created file
+
+## Install
+
+The "requests" package is needed:
+
+```sh
+$ pip install requests
+```
+
+
+
+## Usage
+
+Simply enter the command "createProject" in the command line. In addition, two parameters must also be passed:
+
+1. Name of the project
+2. Type of the main file (Example: py for a python file)
+
+```sh
+$ createProject myProject py
+```
